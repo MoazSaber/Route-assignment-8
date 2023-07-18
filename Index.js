@@ -42,11 +42,20 @@ var qute=[
     }
 ]
 
+var h;
 function showquote() {
     var m= Math.floor((Math.random()*qute.length))
+    var q=JSON.parse(localStorage.getItem('cartona'))
     document.getElementById('demo').innerHTML=qute[m].quote
-    document.getElementById('demoo').innerHTML=qute[m].author
+    document.getElementById('demoo').innerHTML=qute[m].author;
+    while(m===q){
+        var m= Math.floor((Math.random()*qute.length))
+        document.getElementById('demo').innerHTML=qute[m].quote
+        document.getElementById('demoo').innerHTML=qute[m].author;
+    }
+     h =localStorage.setItem('cartona',m)
     
+   
     
 }
 
